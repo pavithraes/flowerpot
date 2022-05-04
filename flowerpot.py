@@ -4,7 +4,7 @@ Displays flower ASCII art
 
 import sys
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 # ASCII art from https://www.asciiart.eu/plants/flowers
 # Because I have the artistic skills of a potato
