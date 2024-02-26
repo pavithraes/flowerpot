@@ -9,14 +9,22 @@ on:
   workflow_dispatch:
 
 jobs:
-   build:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Upload Documentation to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@v1
-        with:
-          path: "docs"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Push docs to wiki
         env:
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |-
+          gh auth setup-git
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git clone https://github.com/pavithraes/flowerpot.wiki.git
+          rm ./flowerpot.wiki/*
+          cp -r ./docs/* ./flowerpot.wiki/
+          cd flowerpot.wiki
+          git add -A
+          git commit -m "Auto-update from /docs/wiki"
+          git push --set-upstream origin
