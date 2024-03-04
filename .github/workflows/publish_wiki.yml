@@ -22,10 +22,10 @@ jobs:
           gh auth setup-git
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git clone https://github.com/Point72/csp.wiki.git
-          rm ./csp.wiki/*
-          cp -r ./docs/wiki/* ./csp.wiki/
-          cd csp.wiki
+          git clone https://github.com/pavithraes/flowerpot.wiki.git
+          rm ./flowerpot.wiki/*
+          cp -r ./docs/* ./flowerpot.wiki/
+          cd flowerpot.wiki
           git add -A
           git commit -m "Auto-update from /docs/wiki"
           git push --set-upstream origin
