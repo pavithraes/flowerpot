@@ -2,4 +2,6 @@
 
 A tiny script to print ASCII flowers. :)
 
-This project is my personal space to test various development and GitHub workflows safely.
+This project is my personal space to test various development/GitHub workflows safely.
+
+<!-- Test push to wiki without PAT -->
