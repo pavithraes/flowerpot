@@ -28,5 +28,5 @@ jobs:
         with:
           default_author: github_actions
           message: 'Update REST API documentation (openapi.json)'
-          add: 'openapi.json'
+          add: '.md'
           push: true
