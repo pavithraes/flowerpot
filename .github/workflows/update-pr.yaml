@@ -20,7 +20,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Update Home.md
-      - run: |-
+        run: |-
           echo "testing" >> docs/Home.md
 
       - name: Commit changes
