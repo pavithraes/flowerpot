@@ -10,6 +10,8 @@ on:
 jobs:
   update-openapi-json:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     defaults:
       run:
         shell: bash -el {0}
